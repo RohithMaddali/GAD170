@@ -15,7 +15,8 @@ public class Stats : MonoBehaviour
         none,
         dizzy,
         poisoned,
-        stunned
+        stunned,
+        disabled
     }
     public StatusEffect myStatus;
     public StatusEffect attackEffect;
