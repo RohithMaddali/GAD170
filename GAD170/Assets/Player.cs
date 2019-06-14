@@ -23,6 +23,7 @@ public class Player  : MonoBehaviour
         Estats = GetComponent<Enemystats>();
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //Checker for successful interaction based on chances for different enemies.
             int EH = Random.Range(Estats.health, Estats.health + 101);
             int Hdiff = EH - Pstats.Health;
             if (Hdiff < Pstats.Health)
@@ -73,7 +74,8 @@ public class Player  : MonoBehaviour
             count++;
         }
         Debug.Log("Player defeats the enemy in " + count + " hits.");
-        switch(count)
+        //this is in order to count the no. of hits player takes to defeat the enemy.
+        switch (count)
         {
             case 3:
                 Pstats.exp += 30;
@@ -97,6 +99,7 @@ public class Player  : MonoBehaviour
                 Pstats.exp += 2;
                 break;
         }
+        //exp calculator as per the provided exp curve in google doc.
         expreq = Mathf.Pow(Pstats.level + 3, 3) + 100;
         if(Pstats.exp > expreq)
         {
@@ -111,7 +114,11 @@ public class Player  : MonoBehaviour
     }
     public void Levelup()
     {
-
+        //LEvels up the player and sends him to the attribute function
+    }
+    public void Attribute()
+    {
+        //Decides the picked attribute by player and updates it.
     }
 
 }
