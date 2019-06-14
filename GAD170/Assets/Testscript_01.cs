@@ -41,14 +41,14 @@ public class Testscript_01 : MonoBehaviour
             }
             
         }
-        if (!classCounted)
+        /*if (!classCounted)
         {
             for (int i = 1; i < classSize; i++)
             {
                 Debug.Log(i);
             }
             classCounted = true;
-        }
+        }*/
 
 
     }
