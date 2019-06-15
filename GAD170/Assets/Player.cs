@@ -120,5 +120,19 @@ public class Player  : MonoBehaviour
     {
         //Decides the picked attribute by player and updates it.
     }
+    public void movement()
+    {
+        //decides the playermovement controls in here.
+        //This function will be called from update incase player wants to make any movement.
+    }
+    public void Eattack()
+    {
+        //Attacks coming from the enemy's side.
+    }
+    public void poweups()
+    {
+        //These are player power ups which are yet to be decided on how to use them.
+        //These would be enums.
+    }
 
 }
