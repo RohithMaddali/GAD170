@@ -139,7 +139,7 @@ public class Player  : MonoBehaviour
     public void poweups()
     {
         //These are player power ups which are yet to be decided on how to use them.
-        //These would be enums.
+        //These would be enums and will have specific values.
     }
 
 }
