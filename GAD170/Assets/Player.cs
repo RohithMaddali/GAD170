@@ -75,28 +75,35 @@ public class Player  : MonoBehaviour
         }
         Debug.Log("Player defeats the enemy in " + count + " hits.");
         //this is in order to count the no. of hits player takes to defeat the enemy.
-        switch (count)
+        switch (count)//Calculate the players exp for each enemyt defeated.
         {
             case 3:
                 Pstats.exp += 30;
+                Debug.Log("Player's Exp : " + Pstats.exp);
                 break;
             case 4:
                 Pstats.exp += 25;
+                Debug.Log("Player's Exp : " + Pstats.exp);
                 break;
             case 5:
                 Pstats.exp += 20;
+                Debug.Log("Player's Exp : " + Pstats.exp);
                 break;
             case 6:
                 Pstats.exp += 15;
+                Debug.Log("Player's Exp : " + Pstats.exp);
                 break;
             case 7:
                 Pstats.exp += 10;
+                Debug.Log("Player's Exp : " + Pstats.exp);
                 break;
             case 8:
                 Pstats.exp += 5;
+                Debug.Log("Player's Exp : " + Pstats.exp);
                 break;
             case 9:
                 Pstats.exp += 2;
+                Debug.Log("Player's Exp : " + Pstats.exp);
                 break;
         }
         //exp calculator as per the provided exp curve in google doc.
