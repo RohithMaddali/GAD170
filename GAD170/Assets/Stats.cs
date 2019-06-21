@@ -10,6 +10,8 @@ public class Stats : MonoBehaviour
     public int defense;
     public int luck;
 
+    public bool isDefeated;
+
     public enum StatusEffect
     {
         none,
@@ -17,6 +19,10 @@ public class Stats : MonoBehaviour
         poisoned,
         stunned,
         disabled
+    }
+    public enum Type
+    {
+        small,medium,large
     }
     public StatusEffect myStatus;
     public StatusEffect attackEffect;

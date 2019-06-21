@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Sample_enemy : MonoBehaviour
 {
 
-    Stats myStats;
+     public Stats myStats;
     public int enemyID = 1;
+    private GameObject GameManager;
     public enum EnemyTypes
     {
         small,
@@ -17,6 +18,8 @@ public class Enemy : MonoBehaviour
     public EnemyTypes myType;
     void Start()
     {
+        //Find our game manager
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
         myStats = GetComponent<Stats>();
         switch(myType)
         {
@@ -35,10 +38,20 @@ public class Enemy : MonoBehaviour
     {
         myStats.health -= DMG - myStats.defense;
         myStats.myStatus = incEffect;
+        if (myStats.health <= 0)
+            myStats.isDefeated = true;
     }
-    public void AttackTarget()
+    public void AttackTarget(GameObject target)
     {
-        Attacked(myStats.attack,Stats.StatusEffect.none);
+        target.GetComponent<Sample_player>().Attacked(myStats.attack,Stats.StatusEffect.none);
+    }
+    IEnumerator randomDelay()
+    {
+        yield return new WaitForSeconds(Random.Range(1, 4));
+    }
+    public void Defeated()
+    {
+        GameManager.GetComponent<GameManager>().RemoveEnemy(gameObject);
     }
 }
 
