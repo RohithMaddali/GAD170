@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager_sample : MonoBehaviour
 {
     public GameObject Enemy1, Enemy2, Enemy3, Enemy4;
     // Start is called before the first frame update

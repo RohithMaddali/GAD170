@@ -7,7 +7,7 @@ public class Sample_enemy : MonoBehaviour
 
      public Stats myStats;
     public int enemyID = 1;
-    private GameObject GameManager;
+    private GameObject GameManager_sample;
     public enum EnemyTypes
     {
         small,
@@ -19,7 +19,7 @@ public class Sample_enemy : MonoBehaviour
     void Start()
     {
         //Find our game manager
-        GameManager = GameObject.FindGameObjectWithTag("GameManager");
+        GameManager_sample = GameObject.FindGameObjectWithTag("GameManager_sample");
         myStats = GetComponent<Stats>();
         switch(myType)
         {
@@ -51,7 +51,7 @@ public class Sample_enemy : MonoBehaviour
     }
     public void Defeated()
     {
-        GameManager.GetComponent<GameManager>().RemoveEnemy(gameObject);
+        GameManager_sample.GetComponent<GameManager_sample>().RemoveEnemy(gameObject);
     }
 }
 

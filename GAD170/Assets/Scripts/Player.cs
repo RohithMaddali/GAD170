@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player  : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
     public Playerstats Pstats;
     public Enemystats Estats;
-
     void Start()
     {
         
-        
-        
-            
     }
+
+
+
 
     // Update is called once per frame
     void Update()
     {
+        
         Pstats = GetComponent<Playerstats>();
         Estats = GetComponent<Enemystats>();
         if (Input.GetKeyDown(KeyCode.Space))
@@ -143,3 +143,4 @@ public class Player  : MonoBehaviour
     }
 
 }
+

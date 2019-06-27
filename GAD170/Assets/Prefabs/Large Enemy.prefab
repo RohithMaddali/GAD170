@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8724d53d382ec5c41b22d1f2cbb14197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myStats: {fileID: 0}
   enemyID: 1
   myType: 2
 --- !u!114 &1363198192473689451
@@ -111,6 +112,7 @@ MonoBehaviour:
   speed: 100
   defense: 3
   luck: 5
+  isDefeated: 0
   myStatus: 0
   attackEffect: 0
 --- !u!65 &5570900635039158279
