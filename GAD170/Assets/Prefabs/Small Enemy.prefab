@@ -92,7 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8724d53d382ec5c41b22d1f2cbb14197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myStats: {fileID: 0}
   enemyID: 1
+  GameManager: {fileID: 0}
   myType: 0
 --- !u!114 &5110402812579016343
 MonoBehaviour:
@@ -106,11 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf082909eddb945af68f0ea5f370b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  attack: 50
-  speed: 200
+  health: 50
+  attack: 5
+  speed: 10
   defense: 0
   luck: 1
+  isDefeated: 0
   myStatus: 0
   attackEffect: 0
 --- !u!65 &867551948517758807

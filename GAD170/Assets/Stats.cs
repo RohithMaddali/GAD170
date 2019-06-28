@@ -26,4 +26,11 @@ public class Stats : MonoBehaviour
     }
     public StatusEffect myStatus;
     public StatusEffect attackEffect;
+    public void Attacked(int DMG, StatusEffect incEffect)
+    {
+        health -= DMG - defense;
+        myStatus = incEffect;
+        if (health <= 0)
+            isDefeated = true;
+    }
 }

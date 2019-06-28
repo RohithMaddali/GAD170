@@ -11,15 +11,11 @@ public class Sample_player : MonoBehaviour
         myStats = GetComponent<Stats>();
     }
 
-    public void Attacked(int DMG, Stats.StatusEffect incEffect)
-    {
-        myStats.health -= DMG - myStats.defense;
-        myStats.myStatus = incEffect;
-        if (myStats.health <= 0)
-            myStats.isDefeated = true;
-    }
-    public void AttackTarget(GameObject target)
+   
+   /*
+    *public void AttackTarget(GameObject target)
     {
         target.GetComponent<Sample_player>().Attacked(myStats.attack, Stats.StatusEffect.none);
     }
+    */
 }

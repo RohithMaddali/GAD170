@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myStats: {fileID: 0}
   enemyID: 1
+  GameManager: {fileID: 0}
   myType: 2
 --- !u!114 &1363198192473689451
 MonoBehaviour:
@@ -107,9 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf082909eddb945af68f0ea5f370b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
-  attack: 200
-  speed: 100
+  health: 150
+  attack: 15
+  speed: 20
   defense: 3
   luck: 5
   isDefeated: 0
