@@ -4,13 +4,15 @@ using UnityEngine;
 //adding this line because whne we lose we want to restart the scene. 
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class BattleManager : MonoBehaviour
 {
     public GameObject Enemy1, Enemy2, Enemy3, Enemy4;
     // Start is called before the first frame update
     public List<GameObject> enemyList;
     public List<GameObject> enemySpawnList;
     private bool doBattle = true;
+
+    private GameObject gameManager;
     
 
     
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
             enemyList.Add(enemy);
 
         }
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
     }
     void Update()
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour
                     //set state to lose cause we died
                     combatState = CombatState.Loss;
                     Debug.Log("Lose");
+                    gameManager.GetComponent<GameManager>().TravelToWorld(GameManager.Worlds.Overworld);
                     break;
                 }
                 //next case will be players turn.
@@ -107,6 +111,7 @@ public class GameManager : MonoBehaviour
             //Victory
             case CombatState.Victory:
                 Debug.Log("You are Win!!");
+                gameManager.GetComponent<GameManager>().TravelToWorld(GameManager.Worlds.Overworld);
                 break;
             //Tell the player they won
             //End game

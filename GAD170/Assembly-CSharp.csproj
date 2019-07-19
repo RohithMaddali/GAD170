@@ -60,14 +60,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameManager.cs" />
-    <Compile Include="Assets\Sample_enemy.cs" />
-    <Compile Include="Assets\Sample_player.cs" />
+    <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\Enemystats.cs" />
+    <Compile Include="Assets\Scripts\FollowCamera.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Playerstats.cs" />
-    <Compile Include="Assets\Stats.cs" />
-    <Compile Include="Assets\Testscript_01.cs" />
+    <Compile Include="Assets\Scripts\Sample_enemy.cs" />
+    <Compile Include="Assets\Scripts\Sample_player.cs" />
+    <Compile Include="Assets\Scripts\Stats.cs" />
+    <Compile Include="Assets\Scripts\Testscript_01.cs" />
+    <Compile Include="Assets\Scripts\WildGrass.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/SAE/Trimester 2/GAD170/GAD170/GAD170/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
