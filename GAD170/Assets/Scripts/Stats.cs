@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    public int health;
+    public float health;
     public int attack;
     public int speed;
     public int defense;
     public int luck;
+    public float maxHealth;
 
     public bool isDefeated;
 

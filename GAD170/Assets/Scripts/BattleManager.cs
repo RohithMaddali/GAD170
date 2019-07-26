@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 //adding this line because whne we lose we want to restart the scene. 
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+
 
 public class BattleManager : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class BattleManager : MonoBehaviour
     private bool doBattle = true;
 
     private GameObject gameManager;
+
+    //events only need types not names.
+    public event System.Action<bool, float> UpdateHealth;
     
 
     
@@ -35,6 +40,19 @@ public class BattleManager : MonoBehaviour
     //Objects for combat
     public GameObject enemyobj;
     public GameObject playerobj;
+    private GameObject battleUIManager;
+
+    void Awake()
+    {
+        //sub to battleuimanager
+        battleUIManager = GameObject.FindGameObjectWithTag("BattleUIManager");
+        battleUIManager.GetComponent<BattleUIManager>().CallAttack += CheckCombatState;
+        battleUIManager.GetComponent<BattleUIManager>().CallDefend += CheckCombatState;
+        battleUIManager.GetComponent<BattleUIManager>().CallHeal += CheckCombatState;
+        //you would need to probably have an enum called playerdescision which would keep track of whatever button was pressed
+        //Automatically run enemy's turn but turn it back to manual during the player's turn.
+        //can use bools or coroutines to handle this.
+    }
 
     void Start()
     {
@@ -45,6 +63,7 @@ public class BattleManager : MonoBehaviour
 
         }
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        //UpdateHealth(true, 0.5f);
 
     }
     void Update()
@@ -138,6 +157,9 @@ public class BattleManager : MonoBehaviour
              " for a total of " +
              (attacker.GetComponent<Stats>().attack - defender.GetComponent<Stats>().defense) +
              " damage ");
+        float percentage = defender.GetComponent<Stats>().health / defender.GetComponent<Stats>().maxHealth;
+        UpdateHealth(combatState == CombatState.PlayerTurn, percentage);
+        Debug.Log(percentage);
     }
     IEnumerator Battlego()
     {
