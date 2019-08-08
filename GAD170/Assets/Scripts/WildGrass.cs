@@ -6,6 +6,7 @@ public class WildGrass : MonoBehaviour
 {
     private GameObject gameManager;
     public bool isInGrass;
+    public int chance;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,8 @@ public class WildGrass : MonoBehaviour
 
     void RollDice()
     {
-        int diceRoll = Random.Range(1, 7);
-        if (diceRoll == 3 && isInGrass)
+        int diceRoll = Random.Range(1, chance);
+        if (diceRoll == chance - 1 && isInGrass)
         {
             //encounter! Load battl scene
             gameManager.GetComponent<GameManager>().TravelToWorld(GameManager.Worlds.BatleScene);

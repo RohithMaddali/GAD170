@@ -56,14 +56,17 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
-            enemyList.Add(enemy);
 
-        }
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
-        //UpdateHealth(true, 0.5f);
+        //copy list of enemies to spawn from
+        foreach (GameObject tempEnemy in gameManager.GetComponent<GameManager>().EnemiesToFight)
+        {
+            enemySpawnList.Add(tempEnemy);
+        }
+        //clear the list so the gameManager doesn't need to worry about it and we're ready to go for next time!
+        gameManager.GetComponent<GameManager>().EnemiesToFight.Clear();
+        //Spawn our first enemy
+        SpawnEnemy();
 
     }
     void Update()
@@ -89,9 +92,17 @@ public class BattleManager : MonoBehaviour
     }
     public void SpawnEnemy()
     {
-        //spawn enemy from list
-        //using the size of the list as the random range maximum
-        Instantiate(enemySpawnList[Random.Range(0, enemySpawnList.Count)], transform);
+        if (enemySpawnList.Count > 0)
+        {
+            //get the spawn location for the enemies using a tag like "EnemySpawnLoc"
+            Transform EnemySpawnLoc = GameObject.FindGameObjectWithTag("EnemySpawnLoc").transform;
+            //assign the enemy obj
+            enemyobj = Instantiate(enemySpawnList[0], EnemySpawnLoc);
+        }
+        else
+        {
+            combatState = CombatState.Victory;
+        }
     }
     public void CheckCombatState()
     {

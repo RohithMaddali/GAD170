@@ -10,6 +10,9 @@ public class Stats : MonoBehaviour
     public int defense;
     public int luck;
     public float maxHealth;
+    public int curExp;
+    public int neededExp;
+    public int level;
 
     public bool isDefeated;
 
