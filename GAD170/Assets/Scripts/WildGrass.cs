@@ -21,6 +21,7 @@ public class WildGrass : MonoBehaviour
         if (diceRoll == chance - 1 && isInGrass)
         {
             //encounter! Load battl scene
+            Debug.Log(diceRoll);
             gameManager.GetComponent<GameManager>().TravelToWorld(GameManager.Worlds.BatleScene);
         }
         StartCoroutine(CheckTimer());

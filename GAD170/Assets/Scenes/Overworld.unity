@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -264,6 +264,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInGrass: 0
   chance: 3
+--- !u!1 &889105579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889105580}
+  m_Layer: 0
+  m_Name: SpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889105580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889105579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.23, y: 1.41, z: 2.76}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1278604613
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +328,6 @@ MonoBehaviour:
   - {fileID: 3062743647059162598, guid: 6ce1ba92c030c924ea43b0b3dfccd33e, type: 3}
   - {fileID: 8094071454040701312, guid: fbc0007987b201f468ae7d3ad4e773c0, type: 3}
   EnemiesToFight: []
-  tracker: 
 --- !u!4 &1278604615
 Transform:
   m_ObjectHideFlags: 0
@@ -409,6 +438,7 @@ GameObject:
   - component: {fileID: 1583759506}
   - component: {fileID: 1583759505}
   - component: {fileID: 1583759510}
+  - component: {fileID: 1583759511}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -522,6 +552,30 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1583759511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583759504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbf082909eddb945af68f0ea5f370b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  attack: 0
+  speed: 0
+  defense: 0
+  luck: 0
+  maxHealth: 0
+  curExp: 0
+  neededExp: 0
+  level: 0
+  isDefeated: 0
+  myStatus: 0
+  attackEffect: 0
 --- !u!1 &1878749404
 GameObject:
   m_ObjectHideFlags: 0
